@@ -11,13 +11,13 @@ Tournament::Tournament() {
 
 void Tournament::NeverEndingTournament() {
   int matchCounter = 0;
-  while (matchCounter < 1) {
-    for (uint i = 0; i < competitors.size(); i++) {
+  while (true) {
+    for (uint i = 0; i < 1; i++) { //competitors.size()
       uint op;
       for(op = i; op == i; op = rand() % competitors.size()){}
       Competitor *comp1 = &competitors[i];
       Competitor *comp2 = &competitors[op];
-      Match match(this, comp1->name, comp2->name, matchCounter++);
+      Match match(this, comp1->name, comp2->name, matchCounter++, 10000, 200);
 
       GameState g = match.PlayMatch();
 

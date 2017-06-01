@@ -1,5 +1,4 @@
 #include <iostream>
-
 #include "src/Tournament.h"
 
 using namespace std;

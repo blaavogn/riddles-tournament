@@ -11,6 +11,8 @@
 class Tournament {
 private:
   std::vector<Competitor> competitors;
+  const int TimeBank = 10000;
+  const int TimePerMove = 200;
 public:
   Tournament();
   void NeverEndingTournament();

@@ -14,8 +14,9 @@ private:
   int reader;
   int writer;
 public:
+  int TimeBank;
   std::string name;
-  BotHandle(std::string name, int matchId, int playerId);
+  BotHandle(std::string name, int matchId, int playerId, int timeBank);
   void Send(std::string msg);
   std::string Receive();
   void Kill();

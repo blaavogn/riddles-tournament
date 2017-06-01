@@ -1,7 +1,8 @@
 #include "BotHandle.h"
 using namespace std;
 
-BotHandle::BotHandle(string name, int matchId, int playerId) : name(name) {
+BotHandle::BotHandle(string name, int matchId, int playerId, int timeBank)
+  : TimeBank(timeBank) , name(name) {
   int parent_child[2];
   int child_parent[2];
   if (pipe(parent_child) || pipe(child_parent)) {
@@ -70,7 +71,7 @@ string BotHandle::Receive() {
           else return msg;
         }
         else {
-          return "#NONE - CLOSED";
+          return "#NONE A - CLOSED";
         }
       default:
         if (size > 0) msg += string(buffer, size);
